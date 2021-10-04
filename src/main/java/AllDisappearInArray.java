@@ -35,10 +35,28 @@ public class AllDisappearInArray {
         return res;
     }
 
+    public List<Integer> findMissingNumbersUsingInplaceSort(int[] nums) {
+        List<Integer> res = new ArrayList<>();
+        for (int i = 0; i < nums.length; i++) {
+            while (nums[i] != nums[nums[i] - 1]) {
+                int tmp = nums[i];
+                nums[i] = nums[tmp - 1];
+                nums[tmp - 1] = tmp;
+            }
+        }
+        for (int i = 1; i < nums.length; i++) {
+            if (i != nums[i - 1]) {
+                res.add(i);
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         AllDisappearInArray f = new AllDisappearInArray();
         int[] nums = new int[]{4, 3, 2, 7, 8, 2, 3, 1};
         //System.out.println(f.findMissingNumbers(nums));
-        System.out.println(f.findDisappeared(nums));
+        //System.out.println(f.findDisappeared(nums));
+        System.out.println(f.findMissingNumbersUsingInplaceSort(nums));
     }
 }

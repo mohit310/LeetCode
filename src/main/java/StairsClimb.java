@@ -17,7 +17,6 @@ public class StairsClimb {
         return second;
     }
 
-
     public long findStairCombos(int n) {
         //TODO: Add memoization
         if (n == 0) return 0;
@@ -28,9 +27,6 @@ public class StairsClimb {
 
     public static void main(String[] args) {
         StairsClimb c = new StairsClimb();
-        for (int i = 1; i <= 50; i++) {
-            //System.out.println(c.findNumberOfCombinations(i));
-            System.out.println(c.findStairCombos(i));
-        }
+        System.out.println(c.findNumberOfCombinations(3));
     }
 }
