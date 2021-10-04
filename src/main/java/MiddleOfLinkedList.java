@@ -6,18 +6,18 @@
  * tip is to use the same concept of cyclic linklist. slow and fast pointer. Since we are jumping fast pointer 2 at a time it will reach the end and the slow will be in middle.
  */
 public class MiddleOfLinkedList {
-    static class ListNode {
+    static class Node {
         int val;
-        ListNode next;
+        Node next;
 
-        ListNode() {
+        Node() {
         }
 
-        ListNode(int val) {
+        Node(int val) {
             this.val = val;
         }
 
-        ListNode(int val, ListNode next) {
+        Node(int val, Node next) {
             this.val = val;
             this.next = next;
         }
@@ -33,8 +33,8 @@ public class MiddleOfLinkedList {
 
     //0->1->2->3->4->5->6->null - return 3
     //0->1->2->3->4->5->null - two middle as 2 and 3 since even number of node return 3 and not 2
-    public ListNode getMiddle(ListNode head) {
-        ListNode slow = head, fast = head;
+    public Node getMiddle(Node head) {
+        Node slow = head, fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;
             fast = fast.next.next;
@@ -43,13 +43,14 @@ public class MiddleOfLinkedList {
     }
 
     public static void main(String[] args) {
-        ListNode six = new ListNode(6, null);
-        ListNode five = new ListNode(5, six);
-        ListNode four = new ListNode(4, five);
-        ListNode three = new ListNode(3, four);
-        ListNode two = new ListNode(2, three);
-        ListNode one = new ListNode(1, two);
-        ListNode head = new ListNode(0, one);
+        //Node six = new Node(6, null);
+        //Node five = new Node(5, six);
+        Node five = new Node(5, null);
+        Node four = new Node(4, five);
+        Node three = new Node(3, four);
+        Node two = new Node(2, three);
+        Node one = new Node(1, two);
+        Node head = new Node(0, one);
         MiddleOfLinkedList m = new MiddleOfLinkedList();
 
         System.out.println(m.getMiddle(head));

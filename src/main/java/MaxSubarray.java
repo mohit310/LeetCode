@@ -9,7 +9,7 @@
  * If the array contains all non-positive numbers, then a solution is any subarray of size 1 containing the maximal value of the array (or the empty subarray, if it is permitted).
  * Several different sub-arrays may have the same maximum sum.
  * <p>
- * [−2, 1, −3, 4, −1, 2, 1, −5, 4],
+ * [−2, 1, −3, 4, −1, 2, 1, −5, 4]
  */
 public class MaxSubarray {
     public int maxSubArray(int[] A) {

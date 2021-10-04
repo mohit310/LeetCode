@@ -6,20 +6,20 @@
  * Return true if there is a cycle in the linked list. Otherwise, return false.
  */
 public class LinkListCycle {
-    static class ListNode {
+    static class Node {
         int val;
-        ListNode next;
+        Node next;
 
-        ListNode(int x) {
+        Node(int x) {
             val = x;
             next = null;
         }
     }
 
     //Move twoJump pointer 2 at a time. this way we ensure that if it's a loop, eventuaally one jump will catch on and at some point oneJummp == twoJump
-    public boolean hasCycle(ListNode head) {
+    public boolean hasCycle(Node head) {
         if (head == null) return false;
-        ListNode oneJump = head, twoJump = head;
+        Node oneJump = head, twoJump = head;
         while (twoJump != null && twoJump.next != null) {
             oneJump = oneJump.next;
             twoJump = twoJump.next.next;
@@ -29,11 +29,11 @@ public class LinkListCycle {
     }
 
     public static void main(String[] args) {
-        ListNode head = new ListNode(0);
-        ListNode one = new ListNode(1);
-        ListNode two = new ListNode(2);
-        ListNode three = new ListNode(3);
-        ListNode four = new ListNode(4);
+        Node head = new Node(0);
+        Node one = new Node(1);
+        Node two = new Node(2);
+        Node three = new Node(3);
+        Node four = new Node(4);
         head.next = one;
         one.next = two;
         two.next = three;
