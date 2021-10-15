@@ -27,6 +27,17 @@ public class StairsClimb {
 
     public static void main(String[] args) {
         StairsClimb c = new StairsClimb();
-        System.out.println(c.findNumberOfCombinations(3));
+        System.out.println(c.findNumberOfCombinations(10));
+        System.out.println(c.findNumberOfCombos(10));
+    }
+
+    public long findNumberOfCombos(int n) {
+        long first = 0;
+        long second = 1;
+        for (int i = 0; i <= n; i++) {
+            first = first + second;
+            second = first - second;
+        }
+        return first;
     }
 }
