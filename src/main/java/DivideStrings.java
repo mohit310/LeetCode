@@ -1,0 +1,2 @@
+public class DivideStrings {
+}
